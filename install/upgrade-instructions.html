@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Kwikcontent Upgrade Instructions</title>
+</head>
+
+<body>
+
+<h2>Should You Upgrade To Version 1.2?</h2>
+
+<p>It's not necessary to upgrade existing domains to the latest version of Kwikcontent. An upgrade is <strong>only recommended if you would like to take advantage of the new Amazon and eBay integration feature</strong>.</p>
+
+<p>The SEO URL feature is useful for new installations only. SEO URLs result in duplicate content for existing installations as the old URLs will continue to function as well. If you do upgrade an existing Kwikcontent installation that already has some pages indexed in the search engines, you should turn off SEO URLs (see below).</p>
+
+<p>Note: Any manual modifications you might have made to Kwikcontent's PHP or HTML files will be lost, as they will be overwritten by the upgrade.</p>
+
+<h2>How To Upgrade</h2>
+
+<ol>
+	<li>Backup your existing installation of Kwikcontent so you can revert to it if something goes wrong during the upgrade process.
+	<li>Download the Zip file which contains your domain's Kwikcontent application.</li>
+	<li>Extract the Kwikcontent Zip file to your local hard drive. (It's best to extract the file twice: Once for any <a href="instructions.html">new installations</a> you might want to make in the future, and again -- to a different directory -- for upgrades. You'll be making a few changes to the upgrade files below, so it's useful to keep the two extractions separate.)</li>
+	<li>Import the file <strong>upgrade-to-1.2.sql</strong> (found in your Kwikcontent <strong>/install</strong> directory) into your existing Kwikcontent MySQL database. (<a href="http://kwikcontent.com/supportforum/showthread.php?tid=77" target="_BLANK">Get more information about this step</a>)</li>
+	<li>In the <strong>/includes</strong> directory, delete the file <strong>_functions.php</strong> and then rename the file <strong>_functions-oldurls.php</strong> to <strong>_functions.php</strong>. This ensures backwards compatibility with the old-style URLs.</li>
+	<li>If you renamed your <strong>/admin</strong> directory on your original installation, rename the <strong>/admin</strong> directory you just extracted to that same name.</li>
+      <li>Upload all of the files to the web root directory of your domain (except for the <strong>/install</strong> directory). Overwrite everything.</li>
+	<li>Visit the admin panel of your Kwikcontent software (<strong>www.yourdomain.com/admin</strong>) and click into the Settings area. You will need to enter your the following values:
+<ul>
+<li><em>Domain Title</em> - The name of your website; this should be a short and powerful keyphrase, without the domain extension</li>
+<li><em>Amazon Affiliate ID</em> - You can get this from <a href="https://affiliate-program.amazon.com/">Amazon Associates</a>.
+<li><em>Amazon Global Keyphrase</em> - Enter one or two words relevant to your site here. Be as broad as possible to get the best results. You might have to experiment a little until your site displays suitable results.
+<li><em>eBay CampaignID</em> - You can get this from <a href="https://ebaypartnernetwork.com/">eBay Partner Network</a>. First create an account, then create a campaign and enter the CampaignID here.
+<li><em>eBay Front Page Keyphrase</em> - Enter one or two words relevant to your site here. These words are used only for eBay ads on the front page of your domain. All other eBay ads are automatically matched to the category they are displayed in.</ul>
+
+
+
+
+
+
+
+
+</ol>
+
+<p>Your upgrade is complete. You can now begin updating your site's content. If you have any problems (or would like to share your suggestions for improving Kwikcontent) please visit our <a href="http://www.kwikcontent.com/supportforum" target="_blank">support forum</a>. </p>
+
+</body>
+</html>

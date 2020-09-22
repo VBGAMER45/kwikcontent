@@ -1,0 +1,34 @@
+{include file="_header.htm"}
+
+{if $domain.google_ad_client}
+<div class="y_image_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		google_ad_format = "468x60_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+<h2>{$image.img_info.Title}</h2>
+
+<img src="{$image.img_info.Url}" width="{$image.img_info.Width}" height="{$image.img_info.Height}" border="0" alt="{$image.img_info.Title}" />
+	{if $domain.forum_url}
+<p><a href="{$domain.forum_url}"
+		{if $domain.forum_blank}
+		target="_BLANK" {/if} >Discuss this image on our forum.</a></center></p>
+{/if}
+
+{if $image.img_info.Summary}<p><b>Summary:</b> {$image.img_info.Summary}</p>{/if}
+<p><b>Image Dimensions:</b> {$image.img_info.Width} x {$image.img_info.Height}</p>
+
+
+<a href="{$image.img_info.RefererUrl}">Image originally found here.</a>
+<br /><a href="http://www.bing.com" target="_blank"><img src="{$SMARTY_BASE_FOLDER}images/bingresults.png" border="0" alt="Bing" /></a>
+{include file="_footer.htm"}

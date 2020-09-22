@@ -1,0 +1,73 @@
+{include file="_header.htm"}
+
+<!-- SiteSearch Google -->
+<form method="get" action="/search_google.php" target="_top">
+<table align="center" border="0" bgcolor="#ffffff">
+<tr><td nowrap="nowrap" valign="top" align="left" height="32">
+
+</td>
+<td nowrap="nowrap">
+<input type="hidden" name="domains" value="{$BASE_DOMAIN}"></input>
+<label for="sbi" style="display: none">Enter your search terms</label>
+<input type="text" name="q" size="31" maxlength="255" value="" id="sbi"></input>
+<label for="sbb" style="display: none">Submit search form</label>
+<input type="submit" name="sa" value="Google Search" id="sbb"></input>
+</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input type="radio" name="sitesearch" value="" checked id="ss0"></input>
+<label for="ss0" title="Search the Web"><font size="-1" color="#000000">Web</font></label></td>
+<td>
+<input type="radio" name="sitesearch" value="{$BASE_DOMAIN}" id="ss1"></input>
+<label for="ss1" title="Search {$BASE_DOMAIN}"><font size="-1" color="#000000">{$BASE_DOMAIN}</font></label></td>
+</tr>
+</table>
+<input type="hidden" name="client" value="{$domain.google_ad_client}"></input>
+<input type="hidden" name="forid" value="1"></input>
+<input type="hidden" name="ie" value="ISO-8859-1"></input>
+<input type="hidden" name="oe" value="ISO-8859-1"></input>
+<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:11"></input>
+<input type="hidden" name="hl" value="en"></input>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+
+<div style="border-top: 1px solid #cccccc">&nbsp;</div>
+
+<!-- Google Search Result Snippet Begins -->
+<div id="googleSearchUnitIframe"></div>
+
+{literal}
+<script type="text/javascript">
+   var googleSearchIframeName = 'googleSearchUnitIframe';
+   var googleSearchFrameWidth = 550;
+   var googleSearchFrameborder = 0 ;
+   var googleSearchDomain = 'www.google.com';
+</script>
+<script type="text/javascript"
+         src="http://www.google.com/afsonline/show_afs_search.js">
+</script>
+{/literal}
+<!-- Google Search Result Snippet Ends -->
+
+{if $domain.google_ad_client}
+<div class="search_google_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 336;
+		google_ad_height = 280;
+		google_ad_format = "336x280_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+{include file="_footer.htm"}

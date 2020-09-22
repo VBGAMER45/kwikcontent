@@ -1,0 +1,99 @@
+
+					</div>
+			</div>
+		</div>
+		<div class="yui-b">
+
+			<div class="main_navigation">
+				<ul>
+					<li><a href="{$BASE_FOLDER}">Home</a></li>
+
+
+
+
+		{if $domain.forum_url}
+
+		<li><a href="{$domain.forum_url}"
+		{if $domain.forum_blank}
+		target="_BLANK" {/if} >Forum</a></li>
+{/if}
+
+
+					{foreach from=$top_keys_nav item=key}
+					<li><a href="{$key.url_keyword}">{$key.key_text}</a></li>
+					{/foreach}
+					{foreach from=$top_sps_nav item=top_sp}
+					<li><a href="{$top_sp.sp_url}">{$top_sp.sp_nav_title}</a></li>
+					{/foreach}
+					{if $domain.google_search}
+					<li><a href="{$BASE_FOLDER}search_google.php">Search</a></li>
+					{/if}
+				</ul>
+			</div>
+
+
+
+
+			<div class="ads_left">
+				<p>
+				{if $domain.google_ad_client}
+				<script type="text/javascript">
+				<!--
+					google_ad_client = "{$domain.google_ad_client}";
+					google_ad_width = 160;
+					google_ad_height = 600;
+					google_ad_format = "160x600_as";
+					google_ad_type = "text_image";
+					{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+				//-->
+				</script>
+				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+<br />
+<br /><br />
+				{/if}
+
+
+
+
+{if $domain.ebay_id}
+<script src='http://adn.ebay.com/files/js/min/ebay_activeContent-min.js'></script>
+<script src='http://adn.ebay.com/cb?programId=1&campId=5336201868&toolId=10026&keyword={$domain.ebay_keyword}&width=160&height=1600&font=1&textColor=333366&linkColor=333333&arrowColor=FF9900&color1=6599FF&color2=FFFFFF'></script>
+{/if}
+
+
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="ft" class="footer">
+
+		{if $domain.google_ad_client}
+		<div class="ads_bottom">
+			<script type="text/javascript">
+			<!--
+				google_ad_client = "{$domain.google_ad_client}";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				google_ad_format = "728x90_as";
+				google_ad_type = "text_image";
+				{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+			//-->
+			</script>
+			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+		</div>
+		{/if}
+
+		{$linkadgecode}
+		<!--end lac2 -->
+
+		<br /><a href="{$BASE_FOLDER}sitemap/index.html">Sitemap</a>
+		<br />&copy; {$smarty.now|date_format:"%Y"} {$domain.domain_title}. All Rights Reserved.
+	</div>
+</div>
+{if $domain.google_analytics}{$domain.google_analytics}{/if}
+
+
+
+
+</body>
+</html>

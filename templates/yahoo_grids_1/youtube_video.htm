@@ -1,0 +1,31 @@
+{include file="_header.htm"}
+
+{if $domain.google_ad_client}
+<div class="y_image_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		google_ad_format = "468x60_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+<h2>{$video.title}</h2>
+
+    <object width="425" height="350">
+      <param name="movie" value="{$video.videourl}&autoplay=1"></param>
+      <param name="wmode" value="transparent"></param>
+      <embed src="{$video.videourl}&autoplay=1" type="application/x-shockwave-flash" wmode="transparent"
+        width=425" height="350"></embed>
+    </object>
+
+<p><b>Description:</b> {$video.description}</p>
+
+
+{include file="_footer.htm"}

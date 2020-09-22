@@ -1,0 +1,38 @@
+{include file="_header.htm"}
+
+<h2>{$article.article_title}</h2>
+{if $author.name}<p><b>Author:</b> {$author.name}</p>{/if}
+
+{if $domain.google_ad_client}
+<div class="article_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 250;
+		google_ad_height = 250;
+		google_ad_format = "250x250_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+<div class="article_body">
+	{$article.article_body}
+</div>
+
+{if $article.article_biblio}
+	<h3>Acknowledgements</h3>
+	
+	{$article.article_biblio}
+{/if}
+
+
+{if $key_tags}
+	<h3>Related Tags</h3>
+	<p>{$key_tags}</p>
+{/if}
+
+{include file="_footer.htm"}

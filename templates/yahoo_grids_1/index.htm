@@ -1,0 +1,109 @@
+{include file="_header.htm"}
+
+{php} $onindex = 1; {/php}
+
+<p>{$domain.domain_home_text|nl2br}</p>
+
+{foreach name=key_loop from=$keywords item=key key=key_id}	
+	
+
+
+	{if $smarty.foreach.key_loop.iteration == 2}
+
+
+
+	{if $domain.google_ad_client}
+	<div class="home_ads">
+
+		<script type="text/javascript">
+		<!--
+			google_ad_client = "{$domain.google_ad_client}";
+			google_ad_width = 336;
+			google_ad_height = 280;
+			google_ad_format = "336x280_as";
+			google_ad_type = "text_image";
+			{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+		//-->
+		</script>
+		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+	</div>
+	{/if}
+
+
+
+	{/if}
+	
+
+	{if $smarty.foreach.key_loop.iteration == 3}
+	{if $domain.amazon_id}
+
+
+<center>
+<iframe src="http://rcm.amazon.com/e/cm?t={$domain.amazon_id}&o=1&p=15&l=st1&mode=books&search={$domain.amazon_keyword}&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="468" height="240" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<br /><br /></center>
+
+	{/if}
+
+	{/if}
+
+
+
+	<h2 class="keyword_heading">{$key.key_text}</h2>
+	
+	<div class="keyword_container">
+	<div class="keyword_top">&nbsp;</div>
+	<div class="keyword_body">
+		
+		{if $key.articles}
+		<div class="keyword_articles">
+		<h3>{$key.articles_title|capitalize}</h3>
+		{foreach from=$key.articles item=article}
+			<p><a href="{$article.article_url}">{$article.article_title}</a> {$article.article_teaser}</p>
+		{/foreach}
+		</div>
+		<div class="keyword_articles_trailer">
+		<a href="{$key.articles_url}">All {$key.articles_title|capitalize}</a>
+		</div>
+		{/if}
+		
+		{if $yqas.$key_id}
+		<div class="keyword_yqas">
+		<h3>{$key.answers_title|capitalize}</h3>
+		{foreach from=$yqas.$key_id item=yqa}
+			<div class="keyword_yqa">
+				<a href="{$yqa.view_url}">{$yqa.y_q_subj|regex_replace:"/[\r\t\n]/":" "}</a>
+				<p>{$yqa.y_q_cont|regex_replace:"/[\r\t\n]/":" "}</p>
+			</div>
+		{/foreach}
+		<div class="clear"></div>
+		<a href="{$key.answers_url}">Complete {$key.answers_title|capitalize}</a>
+		</div>
+		{/if}
+		
+		{if $yims.$key_id}
+		<div class="keyword_images">
+		<h3>{$key.images_title|capitalize}</h3>
+		{foreach from=$yims.$key_id item=yim}
+			<div class="keyword_y_image"><a href="{$yim.view_url}"><img src="{$yim.img_info.Thumbnail.Url}" alt="{$yim.img_info.Title}" height="40" border="0" /></a></div>
+		{/foreach}
+		<div class="clear"></div>
+		<a href="{$key.images_url}">All {$key.images_title|capitalize}</a>
+		</div>
+		{/if}
+		
+		<div class="keyword_other_resurces">
+			<a href="{$key.links_url}">{$key.links_title|capitalize}</a>
+		</div>
+		
+		<div class="keyword_y_news">
+			<a href="{$key.news_url}">{$key.news_title|capitalize}</a>
+		</div>
+		
+		<div class="clear"></div>
+	
+	</div>
+	</div>
+	
+{/foreach}
+
+{include file="_footer-index.htm"}

@@ -1,0 +1,11 @@
+1.2
+!Yahoo dropped support for yahoo links,yahoo images, yahoo news. They have a new boss api but it paid.
+Switched over to Bing for image search, related links and bing news. You need to get a Bing API to use it.
+!Support for MySQL 5.5+ on install.
+
+1.1
++Massive new support for multiple domains and faster domain setup. Uses one set of files, one common database.
++Added sitemap generator for search engines such google,yahoo,bing accessed via http://www.yourdomain.com/sitemaps/sitemap.php Also multiple sites you can ping Google, Yahoo, Bing, ask.com about your sitemap
++Added Youtube video support. Finds related YouTube videos based on your keyword
++Added database prefixes to load more than one kwikcontent site into a single database
++Upgraded TinyMCE from Version 2.1.2 to 3.2.6

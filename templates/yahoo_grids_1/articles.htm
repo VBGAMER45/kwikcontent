@@ -1,0 +1,31 @@
+{include file="_header.htm"}
+
+<h2>{$key.articles_title|capitalize}</h2>
+
+{if $domain.google_ad_client}
+<div class="articles_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 250;
+		google_ad_height = 250;
+		google_ad_format = "250x250_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+<div class="articles_list">
+<ul>
+{foreach from=$articles item=article}
+	<li><a href="{$article.article_url}">{$article.article_title}</a> {$article.article_teaser}</li>
+{foreachelse}
+	<li>Sorry, no articles were found on this topic.</li>
+{/foreach}
+</ul>
+</div>
+
+{include file="_footer.htm"}

@@ -1,0 +1,15 @@
+RewriteEngine on
+RewriteRule ^sitemap/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ sitemap.php
+RewriteRule ^information/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ keyword.php?k=$1
+RewriteRule ^images/browse/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ yahoo_images.php?k=$1
+RewriteRule ^images/view/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ yahoo_image.php?yim=$1
+RewriteRule ^articles/browse/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ articles.php?k=$1
+RewriteRule ^articles/view/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ article.php?a=$1
+RewriteRule ^otherresources/browse/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ yahoo_links.php?k=$1
+RewriteRule ^knowledgebase/browse/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ yahoo_answers.php?k=$1
+RewriteRule ^knowledgebase/view/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ yahoo_answer.php?yqa=$1
+RewriteRule ^news/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ yahoo_news.php?k=$1
+RewriteRule ^page/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ static_page.php?p=$1
+RewriteRule ^index.html?$ index.php [L]
+RewriteRule ^videos/browse/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ youtube_videos.php?k=$1
+RewriteRule ^videos/view/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/([_A-Za-z0-9\.\,\-\!\(\)\'\\:-]+)/?$ youtube_video.php?video=$1

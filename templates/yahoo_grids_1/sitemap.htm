@@ -1,0 +1,50 @@
+{include file="_header.htm"}
+
+{if $domain.google_ad_client}
+<div class="sitemap_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 250;
+		google_ad_height = 250;
+		google_ad_format = "250x250_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+{foreach from=$keywords.0 item="top_key"}
+	<h2><a href="{$top_key.keyword_url}">{$top_key.key_text}</a></h2>
+	<ul>
+		<li><a href="{$top_key.articles_url}">{$top_key.articles_title|capitalize}</a></li>
+		<li><a href="{$top_key.answers_url}">{$top_key.answers_title|capitalize}</a></li>
+		{if $top_key.total_images}
+		<li><a href="{$top_key.images_url}">{$top_key.images_title|capitalize}</a> ({$top_key.total_images} total)</li>
+		{/if}
+		<li><a href="{$top_key.links_url}">{$top_key.links_title|capitalize}</a></li>
+		<li><a href="{$top_key.news_url}">{$top_key.news_title|capitalize}</a></li>
+	</ul>
+	
+	<div class="sub_keywords">
+		{assign var="key_id" value=$top_key.key_id}
+		{foreach from=$keywords.$key_id item="sub_key"}
+		<h3><a href="{$sub_key.keyword_url}">{$sub_key.key_text}</a></h3>
+		<ul>
+			<li><a href="{$sub_key.answers_url}">{$sub_key.answers_title|capitalize}</a></li>
+			{if $sub_key.total_images}
+			<li><a href="{$sub_key.images_url}">{$sub_key.images_title|capitalize}</a> ({$sub_key.total_images} total)</li>
+			{/if}
+			<li><a href="{$sub_key.links_url}">{$sub_key.links_title|capitalize}</a></li>
+			<li><a href="{$sub_key.news_url}">{$sub_key.news_title|capitalize}</a></li>
+		</ul>
+		{/foreach}
+	</div>
+{/foreach}
+
+<h2>Additional Information</h2>
+{$static_pages_list}
+
+{include file="_footer.htm"}

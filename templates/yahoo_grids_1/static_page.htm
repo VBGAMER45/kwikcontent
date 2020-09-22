@@ -1,0 +1,43 @@
+{include file="_header.htm"}
+
+{if $sp_children}
+<div class="sp_child_nav">
+<ul>
+{foreach from=$sp_children item=spc}
+	<li><a href="{$spc.sp_url}">{$spc.sp_nav_title}</a></li>
+{/foreach}
+</ul>
+</div>
+{/if}
+
+{$sp->sp_html}
+
+{if $sp->rss->items}
+	<div class="rss_items">
+	{foreach from=$sp->rss->items item=item}
+		<div class="rss_item">
+		<a href="{$item.link}">{$item.title}</a>
+		<em>{$item.pubdate}</em>
+		<p>{$item.description}</p>
+		</div>
+	{/foreach}
+	</div>
+{/if}
+
+{if $domain.google_ad_client}
+<div class="sp_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		google_ad_format = "468x60_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+{include file="_footer.htm"}

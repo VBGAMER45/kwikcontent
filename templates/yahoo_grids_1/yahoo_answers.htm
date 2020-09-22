@@ -1,0 +1,33 @@
+{include file="_header.htm"}
+
+<h2>{$keyword.answers_title|capitalize}</h2>
+
+{if $domain.google_ad_client}
+<div class="yqa_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 250;
+		google_ad_height = 250;
+		google_ad_format = "250x250_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+
+
+{foreach from=$answers item="answer"}
+<div class="yqa_block">
+	<a href="{$answer.yqa_url}">{$answer.y_q_subj|regex_replace:"/[\r\t\n]/":" "}</a> {$answer.y_q_cont|regex_replace:"/[\r\t\n]/":" "}
+</div>
+{foreachelse}
+Sorry, we do not currently have any {$keyword.answers_title} entries to show right now.  Please check back soon and often.
+{/foreach}
+
+Powered by Yahoo! Answers
+
+{include file="_footer.htm"}

@@ -1,0 +1,32 @@
+{include file="_header.htm"}
+
+{if $domain.google_ad_client}
+<div class="y_link_ads">
+	<script type="text/javascript">
+	<!--
+		google_ad_client = "{$domain.google_ad_client}";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		google_ad_format = "468x60_as";
+		google_ad_type = "text_image";
+		{if $domain.google_ad_channel}google_ad_channel = "{$domain.google_ad_channel}";{/if}
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+{/if}
+
+<h2>{$keyword.links_title|capitalize}</h2>
+
+<ol class="y_link_list">
+{foreach from=$links item="link"}
+	<li><a href="{$link.link_info.Url}">{$link.link_info.Title}</a> {$link.link_info.Summary} <!-- Link ID: {$link.ylk_id} --></li>
+<br /><a href="http://www.bing.com" target="_blank"><img src="{$SMARTY_BASE_FOLDER}images/bingresults.png" border="0" alt="Bing" /></a>
+
+{foreachelse}
+Sorry, we do not currently have any {$keyword.links_title} to show right now.  Please check back soon and often.
+{/foreach}
+</ol>
+<br /><a href="http://www.bing.com" target="_blank"><img src="{$SMARTY_BASE_FOLDER}images/bingresults.png" border="0" alt="Bing" /></a>
+
+{include file="_footer.htm"}

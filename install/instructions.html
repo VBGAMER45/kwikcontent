@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Kwikcontent Installation Instructions</title>
+</head>
+
+<body>
+
+<h2>Kwikcontent v1.2 Installation Instructions</h2>
+
+<p><small>(If you'd like to <strong>upgrade</strong> an existing installation of Kwikcontent, <a href="upgrade-instructions.html">read this file instead</a>.)</small></p>
+
+<p>Make sure you have read the <a href="http://kwikcontent.com/systemrequirements.php" target="_BLANK">System Requirements</a> before you attempt to install Kwikcontent on your server.  Currently, there is no web-based installer for Kwikcontent available.  However, these step-by-step instructions should prove very easy for most users.</p>
+<p>If you are not comfortable installing your own Kwikcontent software, we can assist you for a small fee. You can <a href="http://kwikcontent.com/purchase.php" target="_BLANK">purchase a Kwikcontent installation here</a>. You can also <a href="http://kwikcontent.com/supportforum/showthread.php?tid=78" target="_BLANK">purchase multiple installations at a discount</a>.</p>
+<ol>
+	<li>Download the Zip file which contains your domain's Kwikcontent application.</li>
+	<li>Extract the Kwikcontent Zip file to your local hard drive. </li>
+	<li>Create a new MySQL database on your domain.</li>
+	<li>Import the <strong>db.sql</strong> file (found in your Kwikcontent <strong>/install</strong> directory) into the MySQL database you just created. (<a href="http://kwikcontent.com/supportforum/showthread.php?tid=77" target="_BLANK">Get more information about this step</a>)</li>
+	<li>Open the <strong>_global.php.rename</strong> file found in the <strong>/includes</strong> directory. Update the MySQL database variables with your proper MySQL database information. Also update the variables associated with the domain you are installing on. Although it is not necessary, advanced users can also update other defined variables in this file. Save the file as <strong>_global.php</strong> (or save it first, then rename it to <strong>_global.php</strong>) </li>
+	<li>Upload all of the files to the web root directory of your domain (except for the <strong>/install</strong> directory).</li>
+	<li>Password protect your <strong>/admin</strong> directory. Note: This directory can be renamed if desired.</li>
+	<li>CHMOD the following directories to 0777:<ul><li><strong>/cache</strong></li><li><strong>/templates_c</strong></li><li><strong>/settings</strong></li></ul>  </li>
+	<li>Visit the admin panel of your Kwikcontent software (<strong>www.yourdomain.com/admin</strong>) and click into the Settings area. You will need to save your to enter two api keys:<br />
+	Yahoo! Application ID in this section before you can begin to update your site content. If you do not yet have a Yahoo application ID, you can <a href="http://search.yahooapis.com/webservices/register_application" target="_blank">obtain one (free of charge) here</a>.
+	Bing Application ID is needd as well. You can get a free api key from <a href="http://www.bing.com/developers/createapp.aspx" target="_blank">http://www.bing.com/developers/createapp.aspx</a>
+
+	</li>
+<li>Most of the other fields are self-explanatory, but these deserve special attention:
+<ul>
+<li><em>Domain Title</em> - The name of your website; this should be a short and powerful keyphrase, without the domain extension</li>
+<li><em>Amazon Affiliate ID</em> - You can get this from <a href="https://affiliate-program.amazon.com/">Amazon Associates</a>.
+<li><em>Amazon Global Keyphrase</em> - Enter one or two words relevant to your site here. Be as broad as possible to get the best results. You might have to experiment a little until your site displays suitable results.
+<li><em>eBay CampaignID</em> - You can get this from <a href="https://ebaypartnernetwork.com/">eBay Partner Network</a>. First create an account, then create a campaign and enter the CampaignID here.
+<li><em>eBay Front Page Keyphrase</em> - Enter one or two words relevant to your site here. These words are used only for eBay ads on the front page of your domain. All other eBay ads are automatically matched to the category they are displayed in.</ul>
+</ol>
+
+<p>Your installation is complete. You can now begin updating your site's content. If you have any problems (or would like to share your suggestions for improving Kwikcontent) please watch the <a href="http://kwikcontent.com/demo.php" target="_BLANK">Kwikcontent Demo Video</a> and/or visit our <a href="http://kwikcontent.com/supportforum" target="_blank">support forum</a>. </p>
+
+<h3>Troubleshooting</h3>
+
+<p>If your site appears to work but no matter which link you click on, you are taken back to the front page, then you did not upload the <strong>.htaccess</strong> file to your web root directory. This is a common oversight because many FTP applications, in their default configuration, simply hide files that start with a dot. For your convenience we have included a file named <strong>htaccess.txt</strong>; simply rename this file to <strong>.htaccess</strong> on your sever and your site should start to work.</p>
+
+</body>
+</html>
